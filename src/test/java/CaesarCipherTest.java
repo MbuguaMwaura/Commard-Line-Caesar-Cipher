@@ -22,8 +22,14 @@ public class CaesarCipherTest{
     }
 
     @Test
-    public void newCaesarCipher_replaceLetterUsingKey_b(){
+    public void newCaesarCipher_replaceLetter_b(){
         CaesarCipher testCaesarCipher = new CaesarCipher("a",2);
         assertEquals("b",testCaesarCipher.isEncrypted());
+    }
+
+    @Test
+    public void newCaesarCipher_replaceLetterByUsingKey(){
+        CaesarCipher testCaesarCipher = new CaesarCipher("a",2);
+        assertEquals("c",testCaesarCipher.isActuallyEncrypted("a",2));
     }
 }
