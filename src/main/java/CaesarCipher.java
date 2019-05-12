@@ -1,3 +1,4 @@
+
 public class CaesarCipher {
 
     private String mStatement;
@@ -24,22 +25,23 @@ public class CaesarCipher {
     public String isActuallyEncrypted(String statement, int key) {
 
 
-        char[] array = statement.toCharArray();
+
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
-        char[] alphabetArray = alphabet.toCharArray();
+                    String encrypted = "";
 
-        for (char eachChar : alphabetArray) {
-            for (char eachStatementChar : array) {
-                if (eachChar == eachStatementChar) {
+                    for (int i = 0; i < statement.length(); i++){
+                        if(alphabet.charAt(i)==statement.charAt(i)){
+                            encrypted += alphabet.charAt(i+key);
 
-                    char letter = alphabet.charAt(alphabet.indexOf(eachChar)+key);
-                    String stringLetter = String.valueOf(letter);
-                    mStatement = stringLetter;
+                        }
+                    }
 
-                }
-            }
-        }
 
-        return mStatement;
+
+
+
+
+
+        return encrypted;
     }
 }

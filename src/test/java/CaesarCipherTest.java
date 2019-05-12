@@ -28,8 +28,14 @@ public class CaesarCipherTest{
     }
 
     @Test
-    public void newCaesarCipher_replaceLetterByUsingKey(){
+    public void newCaesarCipher_replaceLetterByUsingKey_c(){
         CaesarCipher testCaesarCipher = new CaesarCipher("a",2);
         assertEquals("c",testCaesarCipher.isActuallyEncrypted("a",2));
+    }
+
+    @Test
+    public void newCaesarCipher_replaceMultipleLettersByUsingKey_cde(){
+        CaesarCipher testCaesarCipher = new CaesarCipher("abc",2);
+        assertEquals("cde",testCaesarCipher.isActuallyEncrypted("abc",2));
     }
 }
