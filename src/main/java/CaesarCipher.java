@@ -62,7 +62,7 @@ public class CaesarCipher {
 
 
 
-            if(decrypt - key < 97)   {
+            if((decrypt - key > 71) && (decrypt - key < 97) )  {
                 char decrypts = (char) (decrypt + 26 - key);
                 decrypted.append(decrypts);
             }
