@@ -51,4 +51,10 @@ public class CaesarCipherTest{
         assertEquals("a bc",testCaesarCipher.toDecrypt("c de",2));
     }
 
+    @Test
+    public void newCaesarCipher_decryptAStringUsingAKey_ab(){
+        CaesarCipher testCaesarCipher = new CaesarCipher("yz",2);
+        assertEquals("ab",testCaesarCipher.isActuallyEncrypted("yz",2));
+    }
+
 }

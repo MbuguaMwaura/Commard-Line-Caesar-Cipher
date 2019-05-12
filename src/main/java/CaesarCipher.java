@@ -36,14 +36,20 @@ public class CaesarCipher {
             if(encrypt == 32){
 
                 encrypted.append(" ");
-            }else {
-                char encrypts = (char) (encrypt + (key % 26));
+            }
+             if(encrypt + key > 122) {
+                char encrypts = (char) (encrypt - 26 +key);
                 encrypted.append(encrypts);
-
             }
 
 
+            else {
+                char encrypts = (char) (encrypt + (key % 26));
+                encrypted.append(encrypts);
 
+
+
+            }
         }
         result += encrypted;
         return result;
