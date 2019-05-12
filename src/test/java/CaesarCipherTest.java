@@ -38,4 +38,10 @@ public class CaesarCipherTest{
         CaesarCipher testCaesarCipher = new CaesarCipher("abc",2);
         assertEquals("cde",testCaesarCipher.isActuallyEncrypted("abc",2));
     }
+
+    @Test
+    public void newCaesarCipher_decryptAStringUsingAKey_abd(){
+        CaesarCipher testCaesarCipher = new CaesarCipher("cde",2);
+        assertEquals("abc",testCaesarCipher.toDecrypt("cde",2));
+    }
 }

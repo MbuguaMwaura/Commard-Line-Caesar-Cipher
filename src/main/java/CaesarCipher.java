@@ -25,23 +25,38 @@ public class CaesarCipher {
     public String isActuallyEncrypted(String statement, int key) {
 
 
-
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
-                    String encrypted = "";
+        String encrypted = "";
 
-                    for (int i = 0; i < statement.length(); i++){
-                        if(alphabet.charAt(i)==statement.charAt(i)){
-                            encrypted += alphabet.charAt(i+key);
+        for (int i = 0; i < statement.length(); i++) {
+            if (alphabet.charAt(i) == statement.charAt(i)) {
+                encrypted += alphabet.charAt(i + key);
 
-                        }
-                    }
-
-
-
-
-
-
+            }
+        }
 
         return encrypted;
     }
+
+    public String toDecrypt(String statement, int key) {
+        String decrypted = "";
+
+
+        for (int i = 0; i < statement.length(); i++) {
+            int decrypt = statement.charAt(i);
+
+                decrypt = decrypt - (key%26);
+
+                if(decrypt < 'a'){
+                    decrypt = decrypt +26;
+                }
+
+                decrypted += (char)decrypt;
+
+
+        }
+        return decrypted;
+    }
 }
+
+
