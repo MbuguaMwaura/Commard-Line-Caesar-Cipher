@@ -33,10 +33,7 @@ public class CaesarCipher {
 
 
 
-            if(encrypt == 32){
 
-                encrypted.append(" ");
-            }
              if(encrypt + key > 122) {
                 char encrypts = (char) (encrypt - 26 +key);
                 encrypted.append(encrypts);
@@ -65,10 +62,11 @@ public class CaesarCipher {
 
 
 
-                if(decrypt == 32){
-
-                    decrypted.append(" ");
-                }else {
+            if(decrypt - key < 97)   {
+                char decrypts = (char) (decrypt + 26 - key);
+                decrypted.append(decrypts);
+            }
+                else {
                     char decrypts = (char) (decrypt - (key % 26));
                     decrypted.append(decrypts);
 
