@@ -38,24 +38,30 @@ public class CaesarCipher {
         return encrypted;
     }
 
-    public String toDecrypt(String statement, int key) {
-        String decrypted = "";
+    public  String toDecrypt(String statement, int key) {
+        String result = "";
+        StringBuffer decrypted = new StringBuffer();
 
 
         for (int i = 0; i < statement.length(); i++) {
             int decrypt = statement.charAt(i);
 
-                decrypt = decrypt - (key%26);
 
-                if(decrypt < 'a'){
-                    decrypt = decrypt +26;
+
+                if(decrypt == 32){
+
+                    decrypted.append(" ");
+                }else {
+                    char decrypts = (char) (decrypt - (key % 26));
+                    decrypted.append(decrypts);
+
                 }
 
-                decrypted += (char)decrypt;
 
 
         }
-        return decrypted;
+        result += decrypted;
+        return result;
     }
 }
 

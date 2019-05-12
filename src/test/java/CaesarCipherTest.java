@@ -40,8 +40,15 @@ public class CaesarCipherTest{
     }
 
     @Test
-    public void newCaesarCipher_decryptAStringUsingAKey_abd(){
+    public void newCaesarCipher_decryptAStringUsingAKey_abc(){
         CaesarCipher testCaesarCipher = new CaesarCipher("cde",2);
         assertEquals("abc",testCaesarCipher.toDecrypt("cde",2));
     }
+
+    @Test
+    public void newCaesarCipher_decryptAStringWithASpaceUsingAKey_a_bc(){
+        CaesarCipher testCaesarCipher = new CaesarCipher("c de",2);
+        assertEquals("a bc",testCaesarCipher.toDecrypt("c de",2));
+    }
+
 }
